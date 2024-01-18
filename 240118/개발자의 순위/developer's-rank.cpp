@@ -13,11 +13,11 @@ int main() {
         }
     }
     int num=0;
-    for(int i=0;i<n;i++){
-        for(int j=0;j<n;j++){
+    for(int i=1;i<=n;i++){
+        for(int j=1;j<=n;j++){
             int count=0;
             for(int l=0;l<k;l++){
-                int gab,gab2;
+                int gab=0,gab2=0;
                 for(int a=0;a<n;a++){
                     
                     if(developer[l][a]==i){
