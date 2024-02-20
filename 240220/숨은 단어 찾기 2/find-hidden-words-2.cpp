@@ -47,12 +47,12 @@ int main() {
             }
         }
     }
-    for(int i=2;i<n;i++){
+    for(int i=0;i<n-2;i++){
         for(int j=2;j<m;j++){
-            if(num[i][j]=='L'&&num[i-1][j-1]=='E'&&num[i-2][j-2]=='E'){
+            if(num[i][j]=='L'&&num[i+1][j-1]=='E'&&num[i+2][j-2]=='E'){
                 hab++;
             }
-            if(num[i][j]=='E'&&num[i-1][j-1]=='E'&&num[i-2][j-2]=='L'){
+            if(num[i][j]=='E'&&num[i+1][j-1]=='E'&&num[i+2][j-2]=='L'){
                 hab++;
             }
         }
