@@ -60,7 +60,7 @@ int main() {
     }
 
     for(int i=0;i<n;i++){
-        for(int j=0;j<=n-2;j++){
+        for(int j=0;j<=m-2;j++){
             int hab=0;
             for(int k=j;k<=j+2;k++){
                 hab+=num[i][k];
@@ -69,7 +69,7 @@ int main() {
         }
     }
 
-    for(int j=0;j<n;j++){
+    for(int j=0;j<m;j++){
         for(int i=0;i<=n-2;i++){
             int hab=0;
             for(int k=i;k<=i+2;k++){
