@@ -68,6 +68,16 @@ int main() {
             max_num=max(max_num,hab);
         }
     }
+
+    for(int j=0;j<n;j++){
+        for(int i=0;i<n-2;i++){
+            int hab=0;
+            for(int k=i;k<=i+2;k++){
+                hab+=num[k][j];
+            }
+            max_num=max(max_num,hab);
+        }
+    }
     cout<<max_num;
     return 0;
 }
