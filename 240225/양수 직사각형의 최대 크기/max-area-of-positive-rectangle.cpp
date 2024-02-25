@@ -28,7 +28,7 @@ int main() {
         for(int b=1;b<=m;b++){
             
             for(int i=0;i<n-a+1;i++){
-                for(int j=0;j<n-b+1;j++){
+                for(int j=0;j<m-b+1;j++){
                     if(Yang(a,b,i,j)){
                         hab=max(hab,a*b);
                     }
