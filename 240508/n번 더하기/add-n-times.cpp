@@ -8,7 +8,7 @@ int main() {
     int num=a;
     for(int i=0;i<n;i++){
         num+=n;
-        cout<<num;
+        cout<<num<<endl;
     }
     return 0;
 }
