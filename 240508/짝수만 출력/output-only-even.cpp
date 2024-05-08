@@ -6,7 +6,7 @@ int main() {
     int a,b;
     cin>>a>>b;
     int num=a;
-    while(num=<b){
+    while(num<=b){
         if(num%2==0){
             cout<<num<<" ";
         }
