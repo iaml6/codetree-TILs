@@ -3,9 +3,6 @@ using namespace std;
 
 int m,d;
 void Zo(int x,int y){
-    if(x>12){
-        cout<<"No";
-    }
     if(x==1&&y<=31){
         cout<<"Yes";
     }
