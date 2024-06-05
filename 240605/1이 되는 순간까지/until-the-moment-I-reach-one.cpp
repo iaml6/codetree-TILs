@@ -4,9 +4,7 @@ using namespace std;
 int count=0;
 int Ret(int n){
     if(n==1) {
-        if(count==0){
-            return 1;
-        }
+        
         return count;
     }
 
