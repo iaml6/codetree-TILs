@@ -11,7 +11,7 @@ int main() {
         cin>>num[i];
     }
     for(int i=0;i<n;i++){
-        if(i%2==0){
+        if(i%2==1){
             sort(num,num+i);
             cout<<num[i/2]<<" ";
         }
