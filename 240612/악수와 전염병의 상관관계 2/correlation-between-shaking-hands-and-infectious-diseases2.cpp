@@ -35,16 +35,20 @@ int main() {
     sort(develop,develop+t,cmp);
     infect[p]=1;
     for(int i=0;i<t;i++){
+        int change=0;
         if(infect[develop[i].dev1]==1&&handshake[develop[i].dev1]<k){
             handshake[develop[i].dev1]++;
-            infect[develop[i].dev2]=1;
+            change++;
         }
         if(infect[develop[i].dev2]==1&&handshake[develop[i].dev2]<k){
             handshake[develop[i].dev2]++;
+            change++;
+        }
+        if(change>0){
             infect[develop[i].dev1]=1;
+            infect[develop[i].dev2]=1;
         }
     }
-    int count=0;
     for(int i=1;i<n+1;i++){
         if(infect[i]==1){
             cout<<"1";
