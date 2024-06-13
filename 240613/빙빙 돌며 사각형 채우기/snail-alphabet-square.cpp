@@ -30,7 +30,7 @@ int main() {
         x=x+dx[dir];
         y=y+dy[dir];
         if(num[x][y]==91){
-            first=65;
+           
 
         }
         num[x][y]=first+(i%26);
