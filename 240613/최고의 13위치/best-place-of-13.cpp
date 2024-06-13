@@ -14,13 +14,15 @@ int main() {
     }
     int max_coin=0;
     for(int i=0;i<n;i++){
-        int sum=0;
+        
         for(int j=0;j<=n-3;j++){
+            int sum=0;
             sum+=num[i][j];
             sum+=num[i][j+1];
             sum+=num[i][j+2];
+            max_coin=max(max_coin,sum);
         }
-        max_coin=max(max_coin,sum);
+        
     }
     cout<<max_coin;
     return 0;
