@@ -12,7 +12,7 @@ int main() {
         cin>>people[i];
     }
 
-    int min_dis=100000;
+    int min_dis=1000000;
     for(int i=0;i<n;i++){
         int dis=0;
         for(int j=0;j<n;j++){
