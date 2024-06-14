@@ -20,8 +20,9 @@ int main() {
     int max_coin=0;
     int firsti,firstj,firstij;
     for(int i=0;i<n;i++){
-        int sum=0;
+        
         for(int j=0;j<n-2;j++){
+            int sum=0;
             sum+=num[i][j];
             sum+=num[i][j+1];
             sum+=num[i][j+2];
