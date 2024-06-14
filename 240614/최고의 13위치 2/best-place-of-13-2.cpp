@@ -1,53 +1,37 @@
 #include <iostream>
 #include <algorithm>
+#include <cstdlib>
 
 #define MAX_N 20
+
 using namespace std;
 
 int n;
-int num[MAX_N][MAX_N];
-
-
+int arr[MAX_N][MAX_N];
 
 int main() {
+    // 여기에 코드를 작성해주세요.
     cin>>n;
     for(int i=0;i<n;i++){
         for(int j=0;j<n;j++){
-            cin>>num[i][j];
+            cin>>arr[i][j];
         }
     }
-
-    int max_coin=0;
-    int firsti,firstj,firstij;
+    int max_cnt=0;
     for(int i=0;i<n;i++){
-        
         for(int j=0;j<n-2;j++){
-            int sum=0;
-            sum+=num[i][j];
-            sum+=num[i][j+1];
-            sum+=num[i][j+2];
-            firsti=num[i][j];
-            firstj=num[i][j+1];
-            firstij=num[i][j+2];
-            num[i][j]=0;
-            num[i][j+1]=0;
-            num[i][j+2]=0;
             for(int k=0;k<n;k++){
                 for(int l=0;l<n-2;l++){
-                    int sumz=0;
-                    sumz+=num[k][l];
-                    sumz+=num[k][l+1];
-                    sumz+=num[k][l+2];
-                    sum+=sumz;
-                    max_coin=max(max_coin,sum);
-                    sum-=sumz;
+                    if(i==k&&abs(j-l)<=2){
+                        continue;
+                    }
+                    int cnt1 = arr[i][j] + arr[i][j + 1] + arr[i][j + 2];
+                    int cnt2 = arr[k][l] + arr[k][l + 1] + arr[k][l + 2];
+                    max_cnt = max(max_cnt, cnt1 + cnt2);
                 }
             }
-            num[i][j]=firsti;
-            num[i][j+1]=firstj;
-            num[i][j+2]=firstij;
         }
     }
-    cout<<max_coin;
+    cout<<max_cnt;
     return 0;
 }
