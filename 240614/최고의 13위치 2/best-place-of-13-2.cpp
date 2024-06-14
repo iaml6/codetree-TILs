@@ -34,10 +34,13 @@ int main() {
             num[i][j+2]=0;
             for(int k=0;k<n;k++){
                 for(int l=0;l<n-2;l++){
-                    sum+=num[k][l];
-                    sum+=num[k][l+1];
-                    sum+=num[k][l+2];
+                    int sumz=0;
+                    sumz+=num[k][l];
+                    sumz+=num[k][l+1];
+                    sumz+=num[k][l+2];
+                    sum+=sumz;
                     max_coin=max(max_coin,sum);
+                    sum-=sumz;
                 }
             }
             num[i][j]=firsti;
