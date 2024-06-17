@@ -1,6 +1,6 @@
 #include <iostream>
 #include <algorithm>
-#define MAX_N 100
+
 #define MAX_M 10000
 using namespace std;
 
@@ -23,14 +23,14 @@ int main() {
         }
     }
     int maxg=0;
-    int sum=0;
+    
     for(int i=1;i<=MAX_M-k;i++){
-        sum=0;
+        int sum=0;
         for(int j=i;j<=j+k;j++){
             sum+=photo[j];
         }
         maxg=max(maxg,sum);
     }
-    cout<<sum;
+    cout<<maxg;
     return 0;
 }
