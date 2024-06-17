@@ -14,6 +14,7 @@ int cheese[MAX_S+1]={};
 int main() {
     int cnt=0;
     cin>>n>>m>>d>>s;
+    int eat[51]={};
     for(int i=0;i<d;i++){
         cin>>person[i][0]>>person[i][1]>>person[i][2];
     }
@@ -26,25 +27,23 @@ int main() {
         for(int j=0;j<d;j++){
             if(person[j][0]==sickperson[i][0]){
                 if(person[j][2]<sickperson[i][1]){
-                    cheese[person[j][1]]=1;
+                    cheese[person[j][1]]++;
+                    
                 }
             }
         }
    } 
     int correct[n+1]={};
    for(int i=1;i<=m;i++){
-        for(int j=0;j<d;j++){
-            if(person[j][1]==i){
-                correct[person[j][0]]++;
-
-            }
-        }
-   }
-   for(int i=1;i<=n;i++){
-        if(correct[i]>0){
+        if(cheese[i]>0){
             cnt++;
         }
    }
+//    for(int i=1;i<=n;i++){
+//         if(correct[i]>0){
+//             cnt++;
+//         }
+//    }
    cout<<cnt;
 
 
