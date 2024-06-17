@@ -26,6 +26,9 @@ int main() {
         if(h[n-1]>0&&h[n-2]<=0){
             count++;
         }
+        if(h[n-1]>0&&h[n-2]>0){
+            count++;
+        }
         maxg=max(maxg,count);
          for(int j=0;j<n;j++){
             h[j]+=i;
