@@ -46,13 +46,13 @@ int main() {
                     int x=i-q;
                     int y=j-q;
                     int z=k-q;
-                    if(x<0){
+                    if(x<=0){
                         x+=n;
                     }
-                    if(y<0){
+                    if(y<=0){
                         y+=n;
                     }
-                    if(z<0){
+                    if(z<=0){
                         z+=n;
                     }
                     if(x==a1){
@@ -101,13 +101,13 @@ int main() {
                     int x=i-q;
                     int y=j-q;
                     int z=k-q;
-                    if(x<0){
+                    if(x<=0){
                         x+=n;
                     }
-                    if(y<0){
+                    if(y<=0){
                         y+=n;
                     }
-                    if(z<0){
+                    if(z<=0){
                         z+=n;
                     }
                     if(x==a2){
