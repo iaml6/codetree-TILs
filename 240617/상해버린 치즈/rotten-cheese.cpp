@@ -34,7 +34,7 @@ int main() {
     int correct[n+1]={};
    for(int i=1;i<=m;i++){
         for(int j=0;j<d;j++){
-            if(person[j][1]==cheese[i]){
+            if(person[j][1]==i){
                 correct[person[j][0]]++;
 
             }
