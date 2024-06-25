@@ -2,36 +2,25 @@
 using namespace std;
 
 int main() {
-    // 여기에 코드를 작성해주세요.
+    
     int x,y;
     cin>>x>>y;
-    int num=0;
+    int ans=0;
     for(int i=x;i<=y;i++){
-        if(i<100){
-            if(i/10==i%10) num++;
-        }
-        else if(i<1000){
-            if(i/100==i%10){
-                num++;
-            }
-        }
-        else if(i<10000){
-            if(i/1000==i%10&&(i/100)%10==(i/10)%10){
-                num++;
-            }
-        }
-        else if(i<100000){
-            if(i/10000==i%10&&(i/1000)%10==(i/10)%10){
-                num++;
-            }
-        }
-        else if(i<1000000){
-            if(i/100000==i%10&&(i/10000)%10==(i/10)%10&&(i/1000)%10==(i/100)%10){
-                num++;
-            }
-        }
-    }
+        string str=to_string(i);
 
-    cout<<num;
+        bool is_palindrome=true;
+
+        string str_reverse="";
+        for(int j=(int)str.length()-1;j>=0;j--){
+            str_reverse+=str[j];
+        }
+
+        if(str!=str_reverse)
+            is_palindrome=false;
+        if(is_palindrome)
+            ans++;
+    }
+    cout<<ans;
     return 0;
 }
