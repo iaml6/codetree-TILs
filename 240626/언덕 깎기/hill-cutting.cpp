@@ -12,7 +12,7 @@ int min_gab=INT_MAX;
 int main() {
     // 여기에 코드를 작성해주세요.
     cin>>n;
-    int max_height=0,min_height=101;
+    int max_height=-1,min_height=101;
     for(int i=0;i<n;i++){
         cin>>height[i];
         if(height[i]>max_height){
