@@ -1,93 +1,67 @@
 #include <iostream>
-#include <algorithm>
 #include <climits>
+#include <algorithm>
 #define MAX_N 1000
-
 using namespace std;
 
 int n;
-int height[MAX_N];
-int min_gab=INT_MAX;
+int min_num=INT_MAX;
+int unduck[MAX_N];
 
 int main() {
-    // 여기에 코드를 작성해주세요.
     cin>>n;
-    int max_height=-1,min_height=101;
     for(int i=0;i<n;i++){
-        cin>>height[i];
-        if(height[i]>max_height){
-            max_height=height[i];
-        }
-        if(height[i]<min_height){
-            min_height=height[i];
-        }
+        cin>>unduck[i];
     }
 
-    if(max_height-min_height<=17){
-        cout<<"0";
-        return 0;
-    }
-
-    for(int i=0;i<n-1;i++){
-        
-        for(int j=i+1;j<n;j++){
+    for(int i=0;i<=100;i++){
+        for(int j=i;j<=100;j++){
             int sum=0;
-            int maxh,minh;
-            if(height[i]>height[j]){
-                minh=height[j];
-                maxh=height[i];
-            }
-            else if(height[j]>height[i]){
-                minh=height[i];
-                maxh=height[j];
-            }
-            else if(height[j]==height[i]){
-                maxh=height[i];
-                minh=height[i];
-            }
-
-            if(maxh-minh<=17){
+            if(j-i<=17){
+                sum=0;
                 for(int k=0;k<n;k++){
-                    if(height[k]<minh){
-                        int g=minh-height[k];
-                        sum+=(g*g);
+                    if(unduck[k]>j){
+                        sum+=(unduck[k]-j)*(unduck[k]-j);
+
                     }
-                    if(height[k]>maxh){
-                        int g=height[k]-maxh;
-                        sum+=(g*g);
+                    else if(unduck[k]<i){
+                        sum+=(i-unduck[k])*(i-unduck[k]);
                     }
                 }
-
-                min_gab=min(min_gab,sum);
+                
+                min_num=min(min_num,sum);
             }
 
-            // if(maxh-minh>17){
-            //     int cha=maxh-minh;
+            // else if(j-i>17){
+                
+            //     int cha=j-i;
             //     cha-=17;
+            //     int currenti=i,currentj=j;
             //     for(int k=0;k<=cha;k++){
             //         sum=0;
-            //         minh+=k;
-            //         maxh-=(cha-k);
-            //         sum+=(k*k);
-            //         sum+=((cha-k)*(cha-k));
+            //         currentj-=k;
+            //         currenti+=(cha-k);
+            //         sum+=k*k;
+            //         sum+=(cha-k)*(cha-k);
             //         for(int l=0;l<n;l++){
-            //             if(height[l]<minh){
-            //                 int g=minh-height[l];
-            //                 sum+=(g*g);
+            //             if(l==i||l==j)continue;
+            //             if(unduck[l]<currenti){
+            //                 sum+=(currenti-unduck[l])*(currenti-unduck[l]);
             //             }
-            //             if(height[l]>maxh){
-            //                 int g=height[l]-maxh;
-            //                 sum+=(g*g);
+            //             else if(unduck[l]>currentj){
+            //                 sum+=(unduck[l]-currentj)*(unduck[l]-currentj);
             //             }
             //         }
+            //         currentj+=k;
+            //         currenti-=(cha-k);
+            
+            //         min_num=min(min_num,sum);
             //     }
-            //     min_gab=min(min_gab,sum);
             // }
-
-
         }
     }
 
-    cout<<min_gab;
+    cout<<min_num;
+
     return 0;
 }
