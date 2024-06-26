@@ -60,28 +60,28 @@ int main() {
                 min_gab=min(min_gab,sum);
             }
 
-            if(maxh-minh>17){
-                int cha=maxh-minh;
-                cha-=17;
-                for(int k=0;k<=cha;k++){
-                    sum=0;
-                    minh+=k;
-                    maxh-=(cha-k);
-                    sum+=(k*k);
-                    sum+=((cha-k)*(cha-k));
-                    for(int l=0;l<n;l++){
-                        if(height[l]<minh){
-                            int g=minh-height[l];
-                            sum+=(g*g);
-                        }
-                        if(height[l]>maxh){
-                            int g=height[l]-maxh;
-                            sum+=(g*g);
-                        }
-                    }
-                }
-                min_gab=min(min_gab,sum);
-            }
+            // if(maxh-minh>17){
+            //     int cha=maxh-minh;
+            //     cha-=17;
+            //     for(int k=0;k<=cha;k++){
+            //         sum=0;
+            //         minh+=k;
+            //         maxh-=(cha-k);
+            //         sum+=(k*k);
+            //         sum+=((cha-k)*(cha-k));
+            //         for(int l=0;l<n;l++){
+            //             if(height[l]<minh){
+            //                 int g=minh-height[l];
+            //                 sum+=(g*g);
+            //             }
+            //             if(height[l]>maxh){
+            //                 int g=height[l]-maxh;
+            //                 sum+=(g*g);
+            //             }
+            //         }
+            //     }
+            //     min_gab=min(min_gab,sum);
+            // }
 
 
         }
