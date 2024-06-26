@@ -41,8 +41,9 @@ int main() {
                 minh=height[i];
                 maxh=height[j];
             }
-            else{
-                continue;
+            else if(height[j]==height[i]){
+                maxh=height[i];
+                minh=height[i];
             }
 
             if(maxh-minh<=17){
