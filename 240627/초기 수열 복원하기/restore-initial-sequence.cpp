@@ -30,6 +30,12 @@ int main() {
             if(count[j]>1){
                 correct=false;
             }
+            
+        }
+        for(int j=0;j<n;j++){
+            if(real[j]<=0||real[j]>n){
+                correct=false;
+            }
         }
         if(correct==true){
             for(int j=0;j<n;j++){
