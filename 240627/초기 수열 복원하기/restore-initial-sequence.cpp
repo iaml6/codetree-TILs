@@ -30,13 +30,12 @@ int main() {
             if(count[j]>1){
                 correct=false;
             }
-            
-        }
-        for(int j=0;j<n;j++){
-            if(real[j]<=0||real[j]>n){
+            if(real[j-1]<=0||real[j-1]>n){
                 correct=false;
             }
+            
         }
+        
         if(correct==true){
             for(int j=0;j<n;j++){
                 cout<<real[j]<<" ";
