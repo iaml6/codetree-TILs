@@ -17,7 +17,7 @@ int main() {
         cin>>num[i];
     }
 
-    for(int i=1;i<=10;i++){
+    for(int i=1;i<=10000-k;i++){
         int sum=0;
         for(int j=0;j<n;j++){
             if((num[j]-i)>k){
