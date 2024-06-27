@@ -22,6 +22,9 @@ int main() {
         count[first]++;
         for(int j=0;j<n-1;j++){
             first=num[j]-first;
+            if(first<=0||first>n){
+                correct=false;
+            }
             start++;
             real[start]=first;
             count[first]++;
@@ -30,12 +33,8 @@ int main() {
             if(count[j]>1){
                 correct=false;
             }
-            if(real[j-1]<=0||real[j-1]>n){
-                correct=false;
-            }
-            
+
         }
-        
         if(correct==true){
             for(int j=0;j<n;j++){
                 cout<<real[j]<<" ";
@@ -43,9 +42,16 @@ int main() {
             return 0;
         }
         if(correct==false){
+            // for(int j=0;j<n;j++){
+            //     cout<<real[j]<<" ";
+            // }
+            // cout<<endl;
             for(int j=0;j<n;j++){
                 real[j]=0;
-                count[j+1]=0;
+                
+            }
+            for(int j=1;j<n+1;j++){
+                count[j]=0;
                 
             }
         }
