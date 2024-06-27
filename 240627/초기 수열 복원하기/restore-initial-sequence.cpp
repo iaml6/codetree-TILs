@@ -43,16 +43,9 @@ int main() {
             return 0;
         }
         if(correct==false){
-            // for(int j=0;j<n;j++){
-            //     cout<<real[j]<<" ";
-            // }
-            // cout<<endl;
             for(int j=0;j<n;j++){
                 real[j]=0;
-                
-            }
-            for(int j=1;j<n+1;j++){
-                count[j]=0;
+                count[j+1]=0;
                 
             }
         }
