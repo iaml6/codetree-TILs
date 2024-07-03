@@ -13,7 +13,7 @@ int main() {
         cin>>num[i];
     }
 
-  
+    int cnt=0;
     int max_num=0;
     for(int i=1;i<=n;i++){
         int count=0;
@@ -35,13 +35,14 @@ int main() {
         
     }
     else{
-        int cnt=0;
+        
         for(int i=0;i<n;i++){
             if(num[i]==max_num){
                 cnt++;
             }
         }
-        if(cnt>l){
+        
+        if(cnt>l||cnt==0){
             cout<<max_num;
         }
         else{
