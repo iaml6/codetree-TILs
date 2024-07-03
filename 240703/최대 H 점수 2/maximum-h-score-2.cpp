@@ -37,7 +37,7 @@ int main() {
     else{
         int cnt=0;
         for(int i=0;i<n;i++){
-            if(num[j]==max_num){
+            if(num[i]==max_num){
                 cnt++;
             }
         }
