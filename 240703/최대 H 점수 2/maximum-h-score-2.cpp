@@ -35,13 +35,13 @@ int main() {
         return 0;
     }
     
-        int count=0;
+        int cnt=0;
         for(int i=0;i<n;i++){
             if(num[j]==max_num){
-                count++;
+                cnt++;
             }
         }
-        if(count>1){
+        if(cnt>1){
             cout<<max_num;
         }
         else{
