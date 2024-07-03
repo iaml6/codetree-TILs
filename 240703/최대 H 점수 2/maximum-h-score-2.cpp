@@ -41,7 +41,7 @@ int main() {
                 cnt++;
             }
         }
-        if(cnt>1){
+        if(cnt>l){
             cout<<max_num;
         }
         else{
