@@ -34,7 +34,19 @@ int main() {
         cout<<max_num;
         return 0;
     }
-    cout<<max_num+1;
-
+    else{
+        int count=0;
+        for(int i=0;i<n;i++){
+            if(num[j]==max_num){
+                count++;
+            }
+        }
+        if(count>1){
+            cout<<max_num;
+        }
+        else{
+            cout<<max_num+1;
+        }
+    }
     return 0;
 }
