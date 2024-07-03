@@ -1,6 +1,6 @@
 #include <iostream>
 #include <algorithm>
-#define MAX_N 100
+#define MAX_N 1000
 using namespace std;
 
 int n,l;
