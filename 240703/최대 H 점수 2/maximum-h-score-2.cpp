@@ -21,7 +21,7 @@ int main() {
             if(num[j]>=i){
                 cnt++;
             }
-            else if((num[j])==i-1){
+            else if(num[j]==(i-1)){
                 cntl++;
                 cnt++;
             }
