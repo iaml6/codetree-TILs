@@ -32,9 +32,9 @@ int main() {
     }
     if(l==0){
         cout<<max_num;
-        return 0;
+        
     }
-    
+    else{
         int cnt=0;
         for(int i=0;i<n;i++){
             if(num[j]==max_num){
@@ -47,6 +47,8 @@ int main() {
         else{
             cout<<max_num+1;
         }
+    }
+        
     
     return 0;
 }
