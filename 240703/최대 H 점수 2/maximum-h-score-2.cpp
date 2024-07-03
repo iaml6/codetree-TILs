@@ -13,42 +13,25 @@ int main() {
         cin>>num[i];
     }
 
-    int cnt=0;
-    int max_num=0;
+    int ans=0;
     for(int i=1;i<=n;i++){
-        int count=0;
+        int cnt=0;
+        int cntl=0;
         for(int j=0;j<n;j++){
             if(num[j]>=i){
-                count++;
-                
+                cnt++;
             }
-            
-        }
-        
-
-        if(count>=i){
-            max_num=i;
-        }
-    }
-    if(l==0){
-        cout<<max_num;
-        
-    }
-    else{
-        
-        for(int i=0;i<n;i++){
-            if(num[i]==max_num){
+            else if((num[j])==i-1){
+                cntl++;
                 cnt++;
             }
         }
-        
-        if(cnt>l||cnt==0){
-            cout<<max_num;
-        }
-        else{
-            cout<<max_num+1;
+
+        if(cnt>=i){
+            ans=i;
         }
     }
+    cout<<ans;
         
     
     return 0;
