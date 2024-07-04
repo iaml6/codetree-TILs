@@ -9,11 +9,11 @@ int noread[100];
 int main() {
     // 여기에 코드를 작성해주세요.
     cin>>n>>m>>p;
-    char max_gab='0';
+    char max_gab=n+64;
     
     for(int i=0;i<m;i++){
         cin>>alpa[i]>>noread[i];
-        max_gab=max(max_gab,alpa[i]);
+       
         
     }
 
@@ -26,7 +26,7 @@ int main() {
     if(readamount==noread[p-2]){
         read[alpa[p-2]-65]++;
     }
-    
+   
     int real = max_gab-65;
     
     for(int i=0;i<=real;i++){
