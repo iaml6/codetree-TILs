@@ -22,6 +22,10 @@ int main() {
     for(int i=p-1;i<m;i++){
         read[alpa[i]-65]++;
     }
+
+    if(readamount==noread[p-2]){
+        read[alpa[p-2]-65]++;
+    }
     
     int real = max_gab-65;
     
