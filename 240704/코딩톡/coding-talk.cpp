@@ -20,11 +20,16 @@ int main() {
     int read[n]={};
     int readamount=noread[p-1];
     for(int i=p-1;i<m;i++){
+       
         read[alpa[i]-65]++;
     }
-
-    if(readamount==noread[p-2]){
-        read[alpa[p-2]-65]++;
+    int before=p-2;
+    if(readamount==noread[before]){
+        while(readamount==noread[before]){
+            read[alpa[before]-65]++;
+            before--;
+        }
+        
     }
    
     int real = max_gab-65;
@@ -33,6 +38,7 @@ int main() {
         if(readamount==0){
             return 0;
         }
+       
         if(read[i]==0){
             char after=i+'A';
             cout<<after<<" ";
