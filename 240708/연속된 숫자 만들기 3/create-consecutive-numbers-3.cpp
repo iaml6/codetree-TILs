@@ -17,11 +17,7 @@ int main() {
     else{
         dis=c-b;
     }
-    int count=0;
-    while(dis>=2){
-        dis/=2;
-        count++;
-    }
-    cout<<count+1;
+    
+    cout<<dis-1;
     return 0;
 }
