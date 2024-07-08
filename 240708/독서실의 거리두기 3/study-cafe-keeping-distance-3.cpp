@@ -33,11 +33,12 @@ int main() {
 
     
     
-    if(max_dis==min_dis){
-        cout<<max_dis-1;
+    
+    if((max_dis/2)>=min_dis){
+        cout<<min_dis;
     }
     else {
-        cout<<min_dis;
+        cout<<max_dis/2;
     }
 
 
