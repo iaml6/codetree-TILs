@@ -9,7 +9,7 @@ int main() {
         cout<<"0";
         return 0;
     }
-    else if(a+1==b||b+1==c){
+    else if(a+1==b||b+1==c||a+2==b||b+2==c){
         cout<<"1";
     }
     else{
