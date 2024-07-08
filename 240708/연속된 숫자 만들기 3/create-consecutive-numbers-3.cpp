@@ -7,6 +7,10 @@ int main() {
     long a,b,c;
     cin>>a>>b>>c;
     long dis;
+    if(a+1==b&&b+1==c){
+        cout<<"0";
+        return 0;
+    }
     if((b-a)>(c-b)){
         dis=b-a;
     }
