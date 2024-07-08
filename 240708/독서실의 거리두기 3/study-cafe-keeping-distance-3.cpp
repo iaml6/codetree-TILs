@@ -15,16 +15,20 @@ int main() {
     int min_dis=3000;
     int max_dis=-1;
     int dis=0;
-    for(int i=1;i<n-1;i++){
+    for(int i=0;i<n;i++){
         if(seat[i]=='1'){
             max_dis=max(max_dis,dis);
-            min_dis=min(min_dis,dis);
+            if(dis!=0){
+                min_dis=min(min_dis,dis);
+            }
+            
             dis=0;
         }
         else{
             dis++;
         }
     }
+    
     if(max_dis==min_dis){
         cout<<max_dis-1;
     }
