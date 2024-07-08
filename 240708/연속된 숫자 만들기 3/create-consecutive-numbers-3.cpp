@@ -14,7 +14,7 @@ int main() {
         dis=c-b;
     }
     int count=0;
-    while(dis>1){
+    while(dis>=2){
         dis/=2;
         count++;
     }
