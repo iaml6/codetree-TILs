@@ -63,19 +63,24 @@ int main() {
                 if(first_dis>=max_dis/2&&first_dis>=min_dis){
                     if(max_dis/2>=min_dis){
                         cout<<max_dis/2;
+                        return 0;
                     }
                     else{
                         cout<<min_dis;
+                        return 0;
                     }
                 }
                 if(first_dis>=max_dis/2&&first_dis<=min_dis){
                 cout<<first_dis;
+                return 0;
                 }
                 else if(max_dis/2<=min_dis&&max_dis/2>=first_dis){
                 cout<<max_dis/2;
+                return 0;
                 }
                 else if(min_dis<=max_dis/2&&min_dis>=first_dis){
                 cout<<min_dis;
+                return 0;
                 }
             }
             else{
@@ -83,19 +88,24 @@ int main() {
                 if(first_dis>=max_dis/2&&first_dis>=min_dis){
                     if(max_dis/2>=min_dis){
                         cout<<max_dis/2;
+                        return 0;
                     }
                     else{
                         cout<<min_dis;
+                        return 0;
                     }
                 }
                 if(first_dis>=max_dis/2&&first_dis<=min_dis){
                 cout<<first_dis;
+                return 0;
                 }
                 else if(max_dis/2<=min_dis&&max_dis/2>=first_dis){
                 cout<<max_dis/2;
+                return 0;
                 }
                 else if(min_dis<=max_dis/2&&min_dis>=first_dis){
                 cout<<min_dis;
+                return 0;
                 }
             }
         }
@@ -103,19 +113,24 @@ int main() {
             if(first_dis>=max_dis/2&&first_dis>=min_dis){
                     if(max_dis/2>=min_dis){
                         cout<<max_dis/2;
+                        return 0;
                     }
                     else{
                         cout<<min_dis;
+                        return 0;
                     }
                 }
             if(first_dis>=max_dis/2&&first_dis<=min_dis){
                 cout<<first_dis;
+                return 0;
             }
             else if(max_dis/2<=min_dis&&max_dis/2>=first_dis){
                 cout<<max_dis/2;
+                return 0;
             }
             else if(min_dis<=max_dis/2&&min_dis>=first_dis){
                 cout<<min_dis;
+                return 0;
             }
         }
     }
@@ -124,27 +139,34 @@ int main() {
                 if(first_dis>=max_dis/2&&first_dis>=min_dis){
                     if(max_dis/2>=min_dis){
                         cout<<max_dis/2;
+                        return 0;
                     }
                     else{
                         cout<<min_dis;
+                        return 0;
                     }
                 }
                 if(first_dis>=max_dis/2&&first_dis<=min_dis){
                 cout<<first_dis;
+                return 0;
                 }
                 else if(max_dis/2<=min_dis&&max_dis/2>=first_dis){
                 cout<<max_dis/2;
+                return 0;
                 }
                 else if(min_dis<=max_dis/2&&min_dis>=first_dis){
                 cout<<min_dis;
+                return 0;
                 }
     }
     if(first_dis==5000&&last_dis==5000){
         if(max_dis/2<=min_dis){
             cout<<max_dis/2;
+            return 0;
         }
         else{
             cout<<min_dis;
+            return 0;
         }
     }
   
