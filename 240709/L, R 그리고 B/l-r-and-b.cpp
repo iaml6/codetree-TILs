@@ -27,10 +27,10 @@ int main() {
     }
 
     if(l[0]==b[0]&&l[0]==r[0]){
-        if(l[1]<r[1]&&r[1]<b[1]){
+        if(r[1]>b[1]&&r[1]>l[1]){
             cout<<abs(b[1]-l[1])-1;
         }
-        else if(b[1]<r[1]&&r[1]<l[1]){
+        else if(r[1]<b[1]&&r[1]<l[1]){
             cout<<abs(b[1]-l[1])-1;
         }
         else{
@@ -39,10 +39,10 @@ int main() {
         
     }
     else if(l[1]==b[1]&&l[1]==r[1]){
-        if(l[0]<r[0]&&r[0]<b[0]){
+        if(r[0]<l[0]&&r[0]<b[0]){
             cout<<abs(b[0]-l[0])-1;
         }
-        else if(b[0]<r[0]&&r[0]<l[0]){
+        else if(r[0]>b[0]&&r[0]>l[0]){
             cout<<abs(b[0]-l[0])-1;
         }
         else{
