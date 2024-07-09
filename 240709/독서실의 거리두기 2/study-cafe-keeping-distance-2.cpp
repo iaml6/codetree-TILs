@@ -23,9 +23,10 @@ int main() {
             if(one_count==1){
                 first=i;
             }
-            if(one_count%2==0){
+            if(one_count!=1){
                 max_dis=max(max_dis,dis);
                 min_dis=min(min_dis,dis);
+                
             }
             dis=1;
         }
@@ -33,38 +34,113 @@ int main() {
             dis++;
         }
     }
+    
     for(int i=n-1;i>=0;i--){
         if(seat[i]=='1'){
             last=i;
             break;
         }
     }
-
+    
     int first_dis=first;
     int last_dis=n-1-last;
- 
-    if(max_dis/2<=min_dis){
-        if(max_dis/2>=first_dis&&max_dis/2>=last_dis){
+    // if(seat[0]=='1'){
+    //     first_dis=5000;
+    // }
+    // if(seat[n-1]=='1'){
+    //     last_dis=5000;
+    // }
+    if(last_dis<max_dis/2&&last_dis<min_dis){
+        last_dis=5000;
+    }
+     if(first_dis<max_dis/2&&first_dis<min_dis){
+        first_dis=5000;
+    }
+    // cout<<max_dis<<" "<<min_dis<<endl;
+    if(first_dis!=5000){
+        if(last_dis!=5000){
+            if(first_dis>=last_dis){
+                if(first_dis>=max_dis/2&&first_dis<=min_dis){
+                cout<<first_dis;
+                }
+                else if(max_dis/2<=min_dis&&max_dis/2>=first_dis){
+                cout<<max_dis/2;
+                }
+                else if(min_dis<=max_dis/2&&min_dis>=first_dis){
+                cout<<min_dis;
+                }
+            }
+            else{
+                first_dis=last_dis;
+                if(first_dis>=max_dis/2&&first_dis<=min_dis){
+                cout<<first_dis;
+                }
+                else if(max_dis/2<=min_dis&&max_dis/2>=first_dis){
+                cout<<max_dis/2;
+                }
+                else if(min_dis<=max_dis/2&&min_dis>=first_dis){
+                cout<<min_dis;
+                }
+            }
+        }
+        else{
+            if(first_dis>=max_dis/2&&first_dis<=min_dis){
+                cout<<first_dis;
+            }
+            else if(max_dis/2<=min_dis&&max_dis/2>=first_dis){
+                cout<<max_dis/2;
+            }
+            else if(min_dis<=max_dis/2&&min_dis>=first_dis){
+                cout<<min_dis;
+            }
+        }
+    }
+    else if(first_dis==5000&&last_dis!=5000){
+        first_dis=last_dis;
+                if(first_dis>=max_dis/2&&first_dis<=min_dis){
+                cout<<first_dis;
+                }
+                else if(max_dis/2<=min_dis&&max_dis/2>=first_dis){
+                cout<<max_dis/2;
+                }
+                else if(min_dis<=max_dis/2&&min_dis>=first_dis){
+                cout<<min_dis;
+                }
+    }
+    if(first_dis==5000&&last_dis==5000){
+        if(max_dis/2<=min_dis){
             cout<<max_dis/2;
         }
-        else if(first_dis>=max_dis/2&&first_dis>=last_dis){
-            cout<<first_dis;
-        }
-        else if(last_dis>=max_dis/2&&last_dis>=first_dis){
-            cout<<last_dis;
-        }
-    }
-    else{
-        if(min_dis>=first_dis&&min_dis>=last_dis){
+        else{
             cout<<min_dis;
         }
-        else if(first_dis>=min_dis&&first_dis>=last_dis){
-            cout<<first_dis;
-        }
-        else if(last_dis>=min_dis/2&&last_dis>=first_dis){
-            cout<<last_dis;
-        }
     }
+
+
+
+
+    // if(max_dis/2<=min_dis){
+    //     if(max_dis/2<=first_dis&&max_dis/2<=last_dis){
+    //         cout<<max_dis/2;
+    //     }
+    //     else if(first_dis<=max_dis/2&&first_dis<=last_dis){
+    //         cout<<first_dis;
+    //     }
+    //     else if(last_dis<=max_dis/2&&last_dis<=first_dis){
+    //         cout<<last_dis;
+    //     }
+    // }
+    // else{
+    //     if(min_dis<=first_dis&&min_dis<=last_dis){
+    //         cout<<min_dis;
+    //     }
+    //     else if(first_dis<=min_dis&&first_dis<=last_dis){
+    //         cout<<first_dis;
+    //     }
+    //     else if(last_dis<=min_dis&&last_dis<=first_dis){
+    //         cout<<last_dis;
+    //     }
+    // }
 
     return 0;
 }
