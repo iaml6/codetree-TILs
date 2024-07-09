@@ -27,10 +27,10 @@ int main() {
     }
 
     if(l[0]==b[0]&&l[0]==r[0]){
-        cout<<abs(l[1]-b[1]);
+        cout<<abs(l[1]-b[1])+1;
     }
     else if(l[1]==b[1]&&l[1]==r[1]){
-        cout<<abs(l[0]-b[0]);
+        cout<<abs(l[0]-b[0])+1;
     }
     else{
         cout<<abs(l[0]-b[0])+abs(l[1]-b[1])-1;
