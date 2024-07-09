@@ -56,10 +56,18 @@ int main() {
      if(first_dis<max_dis/2&&first_dis<min_dis){
         first_dis=5000;
     }
-    // cout<<max_dis<<" "<<min_dis<<endl;
+    
     if(first_dis!=5000){
         if(last_dis!=5000){
             if(first_dis>=last_dis){
+                if(first_dis>=max_dis/2&&first_dis>=min_dis){
+                    if(max_dis/2>=min_dis){
+                        cout<<max_dis/2;
+                    }
+                    else{
+                        cout<<min_dis;
+                    }
+                }
                 if(first_dis>=max_dis/2&&first_dis<=min_dis){
                 cout<<first_dis;
                 }
@@ -72,6 +80,14 @@ int main() {
             }
             else{
                 first_dis=last_dis;
+                if(first_dis>=max_dis/2&&first_dis>=min_dis){
+                    if(max_dis/2>=min_dis){
+                        cout<<max_dis/2;
+                    }
+                    else{
+                        cout<<min_dis;
+                    }
+                }
                 if(first_dis>=max_dis/2&&first_dis<=min_dis){
                 cout<<first_dis;
                 }
@@ -84,6 +100,14 @@ int main() {
             }
         }
         else{
+            if(first_dis>=max_dis/2&&first_dis>=min_dis){
+                    if(max_dis/2>=min_dis){
+                        cout<<max_dis/2;
+                    }
+                    else{
+                        cout<<min_dis;
+                    }
+                }
             if(first_dis>=max_dis/2&&first_dis<=min_dis){
                 cout<<first_dis;
             }
@@ -97,6 +121,14 @@ int main() {
     }
     else if(first_dis==5000&&last_dis!=5000){
         first_dis=last_dis;
+                if(first_dis>=max_dis/2&&first_dis>=min_dis){
+                    if(max_dis/2>=min_dis){
+                        cout<<max_dis/2;
+                    }
+                    else{
+                        cout<<min_dis;
+                    }
+                }
                 if(first_dis>=max_dis/2&&first_dis<=min_dis){
                 cout<<first_dis;
                 }
@@ -115,6 +147,7 @@ int main() {
             cout<<min_dis;
         }
     }
+  
 
 
 
