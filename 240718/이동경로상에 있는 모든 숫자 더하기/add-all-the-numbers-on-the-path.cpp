@@ -42,29 +42,10 @@ int main() {
             }
         }
         else{
-            if (dir==0){
-                if(start_x-1>=0){
-                    start_x-=1;
-                    sum+=square[start_x][start_y];
-                }
-            }
-            else if(dir==1){
-                if(start_y+1<=n-1){
-                    start_y+=1;
-                    sum+=square[start_x][start_y];
-                }
-            }
-            else if(dir==2){
-                if(start_x+1<=n-1){
-                    start_x-=1;
-                    sum+=square[start_x][start_y];
-                }
-            }
-            else{
-                if(start_y-1>=0){
-                    start_y-=1;
-                    sum+=square[start_x][start_y];
-                }
+            if(start_x+dx[dir]>=0&&start_x+dx[dir]<n&&start_y+dy[dir]>=0&&start_y+dy[dir]<n){
+                start_x+=dx[dir];
+                start_y+=dy[dir];
+                sum+=square[start_x][start_y];
             }
         }
     }
