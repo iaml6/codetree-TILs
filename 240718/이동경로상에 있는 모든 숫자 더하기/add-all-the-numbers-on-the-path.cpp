@@ -22,75 +22,48 @@ int main() {
     int start_x=n/2,start_y=n/2;
     int sum=0;
     sum+=square[start_x][start_y];
-    int dir_right=0,dir_left=0;
+    int dir=0;
+    int dx[4]={-1,0,1,0},dy[4]={0,1,0,-1};
     for(int i=0;i<t;i++){
         if(order[i]=='L'){
-            dir_left++;
+            if(dir==0){
+                dir=3;
+            }
+            else{
+                dir--;
+            }
         }
         else if(order[i]=='R'){
-            dir_right++;
+            if(dir==3){
+                dir=0;
+            }
+            else{
+                dir++;
+            }
         }
         else{
-            if(dir_right>dir_left){
-                int cha=dir_right-dir_left;
-                if(cha%4==2){
-                    if(start_x+1<=n-1){
-                        start_x+=1;
-                        sum+=square[start_x][start_y];
-                    }
-                }
-                else if(cha%4==1){
-                    if(start_y+1<=n-1){
-                        start_y+=1;
-                        sum+=square[start_x][start_y];
-                    }
-                }
-                else if(cha%4==0){
-                    if(start_x-1>=0){
-                        start_x-=1;
-                        sum+=square[start_x][start_y];
-                    }
-                }
-                else{
-                    if(start_y-1>0){
-                        start_y-=1;
-                        sum+=square[start_x][start_y];
-                    }
-                }
-            }
-            else if(dir_left==dir_right){
+            if (dir==0){
                 if(start_x-1>=0){
                     start_x-=1;
                     sum+=square[start_x][start_y];
                 }
             }
+            else if(dir==1){
+                if(start_y+1<=n-1){
+                    start_y+=1;
+                    sum+=square[start_x][start_y];
+                }
+            }
+            else if(dir==2){
+                if(start_x+1<=n-1){
+                    start_x-=1;
+                    sum+=square[start_x][start_y];
+                }
+            }
             else{
-                int cha=dir_left-dir_right;
-                if(cha%4==2){
-                    if(start_x+1<=n-1){
-                        start_x+=1;
-                        sum+=square[start_x][start_y];
-                    }
-                }
-                else if(cha%4==3){
-                    if(start_y+1<=n-1){
-                        start_y+=1;
-                        sum+=square[start_x][start_y];
-                    }
-                }
-                else if(cha%4==0){
-                    if(start_x-1>=0){
-                        start_x-=1;
-                        sum+=square[start_x][start_y];
-                        
-                    }
-                }
-                else{
-                    if(start_y-1>0){
-                        start_y-=1;
-                        sum+=square[start_x][start_y];
-                        
-                    }
+                if(start_y-1>=0){
+                    start_y-=1;
+                    sum+=square[start_x][start_y];
                 }
             }
         }
