@@ -71,7 +71,7 @@ int main() {
             int gab=0;
             int count1=0,count2=0;
             int x=i,y=j;
-            cout<<"first["<<i<<"]["<<j<<"] "<<first[i][j]<<" second["<<i<<"]["<<j<<"]  "<<second[i][j]<<"  ";
+            
             for(int k=1;k<=first[i][j];k++){
                 gab=0;
                 count1=0,count2=0;
@@ -106,7 +106,7 @@ int main() {
                     }
                     if(
                     count1>0&&count2>0){
-                    cout<<gab<<endl;
+                    
                     sum=max(sum,gab);
                     }
                 }
