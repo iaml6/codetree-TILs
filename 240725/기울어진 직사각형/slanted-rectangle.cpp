@@ -74,7 +74,10 @@ int main() {
             int count1=0,count2=0;
             int x=i,y=j;
             
-            for(int k=1;k<=first[i][j];k++){ // 1번 방향으로 k번 간다.
+            for(int k=1;k<=n;k++){ // 1번 방향으로 k번 간다.
+                if((k+x)>=n){
+                    continue;
+                }
                 gab=0;
                 count1=0,count2=0;
                 x=i,y=j;
@@ -109,7 +112,7 @@ int main() {
                     if(
                     count1>0&&count2>0){
                     
-                    sum=max(sum,gab);
+                        sum=max(sum,gab);
                     }
                 }
                 
