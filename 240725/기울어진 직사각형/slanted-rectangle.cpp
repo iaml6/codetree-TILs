@@ -6,6 +6,10 @@ using namespace std;
 int n;
 int square[MAX_N][MAX_N];
 
+bool InRange(int x,int y, int a){
+    return(x>=0&&y>=0&&y<a&&x<a);
+}
+
 int main() {
     // 여기에 코드를 작성해주세요.
     cin>>n;
@@ -74,10 +78,7 @@ int main() {
             int count1=0,count2=0;
             int x=i,y=j;
             
-            for(int k=1;k<=n;k++){ // 1번 방향으로 k번 간다.
-                if((k+x)>=n){
-                    continue;
-                }
+            for(int k=1;k<=first[i][j];k++){ // 1번 방향으로 k번 간다.
                 gab=0;
                 count1=0,count2=0;
                 x=i,y=j;
@@ -100,11 +101,13 @@ int main() {
                     currentx=x;
                     currenty=y;
                     for(int l=0;l<count1;l++){
+                        if(!InRange(x+l,y-l,n))continue;
                         x+=1;
                         y-=1;
                         gab+=square[x][y];
                     }
                     for(int l=0;l<count2;l++){
+                        if(!InRange(x+l,y+l,n))continue;
                         x+=1;
                         y+=1;
                         gab+=square[x][y];
@@ -112,7 +115,7 @@ int main() {
                     if(
                     count1>0&&count2>0){
                     
-                        sum=max(sum,gab);
+                    sum=max(sum,gab);
                     }
                 }
                 
