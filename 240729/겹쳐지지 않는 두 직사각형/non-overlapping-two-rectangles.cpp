@@ -10,13 +10,15 @@ int Second(int start_x,int start_y,int end_x,int end_y,int a, int b){
     int sum=-100000;
     for(int i=0;i<a;i++){
         for(int j=0;j<b;j++){
-            if((i>=start_x&&i<=end_x)&&(j>=start_y&&j<=end_y)) continue;
+            
             for(int k=i;k<a;k++){
                 for(int l=j;l<b;l++){
+                    if((i>=start_x&&i<=end_x)&&(j>=start_y&&j<=end_y)) continue;
                     int hab=0;
                     for(int c=i;c<=k;c++){
                         
                         for(int d=j;d<=l;d++){
+                            if((c>=start_x&&c<=end_x)&&(d>=start_y&&d<=end_y)) break;
                             hab+=square[c][d];
                         }
 
