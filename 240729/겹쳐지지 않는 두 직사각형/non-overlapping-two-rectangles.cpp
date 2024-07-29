@@ -63,11 +63,11 @@ int Square(int a,int b){
 int main() {
     // 여기에 코드를 작성해주세요.
     cin>>n>>m;
-    int hab=0;
+    int h=0;
     for(int i=0;i<n;i++){
         for(int j=0;j<m;j++){
             cin>>square[i][j];
-            hab+=square[i][j];
+            h+=square[i][j];
         }
     }
 
