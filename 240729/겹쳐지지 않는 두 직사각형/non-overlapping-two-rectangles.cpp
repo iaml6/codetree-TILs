@@ -13,7 +13,7 @@ int Second(int start_x,int start_y,int end_x,int end_y,int a, int b){
             
             for(int k=i;k<a;k++){
                 for(int l=j;l<b;l++){
-                    
+                    if((i>=start_x&&i<=end_x)&&(j>=start_y&&j<=end_y)) continue;
                     int hab=0;
                     for(int c=i;c<=k;c++){
                         
@@ -45,10 +45,8 @@ int Square(int a,int b){
                         }
 
                     }
-                    
-                    
                     hab+=Second(i,j,k,l,a,b);
-                    
+
                     sum=max(sum,hab);
 
 
@@ -71,7 +69,10 @@ int main() {
         }
     }
 
-    
+    if(h>Square(n,m)){
+        cout<<h;
+        return 0;
+    }
     cout<<Square(n,m);
 
     return 0;
