@@ -13,7 +13,7 @@ int Second(int start_x,int start_y,int end_x,int end_y,int a, int b){
             
             for(int k=i;k<a;k++){
                 for(int l=j;l<b;l++){
-                    if((i>=start_x&&i<=end_x)&&(j>=start_y&&j<=end_y)) continue;
+                    
                     int hab=0;
                     for(int c=i;c<=k;c++){
                         
@@ -45,8 +45,10 @@ int Square(int a,int b){
                         }
 
                     }
+                    
+                    int origin=hab;
                     hab+=Second(i,j,k,l,a,b);
-
+                    
                     sum=max(sum,hab);
 
 
@@ -61,13 +63,18 @@ int Square(int a,int b){
 int main() {
     // 여기에 코드를 작성해주세요.
     cin>>n>>m;
+    int hab=0;
     for(int i=0;i<n;i++){
         for(int j=0;j<m;j++){
             cin>>square[i][j];
+            hab+=square[i][j];
         }
     }
 
-    
+    if(Square(n,m)>hab){
+        cout<<hab;
+        return 0;
+    }
     cout<<Square(n,m);
 
     return 0;
