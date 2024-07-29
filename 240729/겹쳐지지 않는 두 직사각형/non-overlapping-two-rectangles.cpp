@@ -69,10 +69,11 @@ int main() {
         }
     }
 
-    if(h>Square(n,m)){
+    if(h<Square(n,m)&&h>0){
         cout<<h;
         return 0;
     }
+    cout<<h<<endl;
     cout<<Square(n,m);
 
     return 0;
