@@ -71,10 +71,7 @@ int main() {
         }
     }
 
-    if(Square(n,m)>hab&&hab>0){
-        cout<<hab;
-        return 0;
-    }
+    
     cout<<Square(n,m);
 
     return 0;
