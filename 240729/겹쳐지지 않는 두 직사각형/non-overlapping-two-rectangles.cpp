@@ -73,7 +73,7 @@ int main() {
         cout<<h;
         return 0;
     }
-    cout<<h<<endl;
+    
     cout<<Square(n,m);
 
     return 0;
