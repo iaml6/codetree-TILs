@@ -46,7 +46,7 @@ int Square(int a,int b){
 
                     }
                     
-                    int origin=hab;
+                    
                     hab+=Second(i,j,k,l,a,b);
                     
                     sum=max(sum,hab);
