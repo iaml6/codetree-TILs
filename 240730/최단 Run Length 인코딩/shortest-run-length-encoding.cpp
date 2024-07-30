@@ -16,7 +16,7 @@ int main() {
         A[i]=word[i];
     }
     int min_count=100;
-    cout<<A[]
+    
     for(int i=0;i<num;i++){
         int count=0;
         char last=A[num-1];
