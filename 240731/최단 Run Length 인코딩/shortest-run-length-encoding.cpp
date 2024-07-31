@@ -35,6 +35,9 @@ int main() {
                 now=A[j];
             }
         }
+        if(A[num-1]!=A[num-2]){
+            change++;
+        }
         if(change==0){
             min_count=min(min_count,3);
         }
