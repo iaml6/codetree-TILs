@@ -85,14 +85,14 @@ int main() {
     for(int i=0;i<n;i++){
         cin>>bomb[i];
     }
-    
+    int fine=0;
     while(true){
         
         Yeon(n,m);
         if(!Correct(n)){
             break;
         }
-        
+        fine++;
         New_Hamsu(n);
         int len=Length(n);
         Change(n);
@@ -105,6 +105,12 @@ int main() {
     if(sum==0){
         cout<<"0";
         return 0;
+    }
+    else if(fine==0){
+       cout<<sum<<endl;
+        for(int i=0;i<sum;i++){
+            cout<<bomb[i]<<endl;
+        } 
     }
     else{
         cout<<sum<<endl;
