@@ -19,10 +19,10 @@ int main() {
     int spot[n*n]={};
     int start=0;
     spot[start]=square[r][c];
+    
+    
     if(dir==0){
-        
-    }
-    for(int i=0;i<m1;i++){
+        for(int i=0;i<m1;i++){
         start++;
         r-=1;
         c+=1;
@@ -79,5 +79,78 @@ int main() {
         }
         cout<<endl;
     }
+    }
+
+
+
+    else if(dir==1){
+        for(int i=0;i<m1;i++){
+        start++;
+        r-=1;
+        c+=1;
+        spot[start]=square[r][c];
+    }
+    for(int i=0;i<m2;i++){
+        start++;
+        r-=1;
+        c-=1;
+        spot[start]=square[r][c];
+    }
+    for(int i=0;i<m3;i++){
+        start++;
+        r+=1;
+        c-=1;
+        spot[start]=square[r][c];
+    }
+    for(int i=0;i<m4;i++){
+        start++;
+        r+=1;
+        c+=1;
+        spot[start]=square[r][c];
+    }
+    
+    
+    int zero=1;
+    
+    square[r][c]=spot[zero];
+    
+    for(int i=0;i<m1;i++){
+        r-=1;
+        c+=1;
+        zero++;
+        square[r][c]=spot[zero];
+        
+        
+    }
+    for(int i=0;i<m2;i++){
+        r-=1;
+        c-=1;
+        zero++;
+        square[r][c]=spot[zero];
+        
+    }
+    for(int i=0;i<m3;i++){
+        r+=1;
+        c-=1;
+        zero++;
+        square[r][c]=spot[zero];
+        
+    }
+    for(int i=0;i<m4-1;i++){
+        r+=1;
+        c+=1;
+        zero++;
+        square[r][c]=spot[zero];
+        
+    }
+    
+    for(int i=1;i<=n;i++){
+        for(int j=1;j<=n;j++){
+            cout<<square[i][j]<<" ";
+        }
+        cout<<endl;
+    }
+    }
+    
     return 0;
 }
