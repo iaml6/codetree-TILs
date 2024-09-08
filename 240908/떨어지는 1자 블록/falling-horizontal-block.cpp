@@ -30,7 +30,7 @@ int main() {
     }
     if(prev==-10){
         for(int i=k;i<=k+m-1;i++){
-            square[n-1][i]=1;
+            square[n][i]=1;
         }
     }
     else{
