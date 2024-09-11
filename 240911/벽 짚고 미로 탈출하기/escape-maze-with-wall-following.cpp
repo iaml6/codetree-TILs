@@ -24,7 +24,7 @@ bool In_Range(int x,int y){
 }
 
 void Go_Front(int dir,int a, int b){
-    if(count!=0&&first_x==a&&first_y==b){
+    if(count>3&&first_x==a&&first_y==b){
         cout<<"-1";
         return;
     }
