@@ -7,7 +7,7 @@ int dx[4]={0,1,0,-1};
 int dy[4]={1,0,-1,0};
 int t=0;
 int num[MAX_N+1][MAX_N+1]={};
-int first_x,first_y;
+int first_x,first_y,first_dir=0;
 int count=0;
 
 int Out(int dir, int a,int b){
@@ -24,7 +24,7 @@ bool In_Range(int x,int y){
 }
 
 void Go_Front(int dir,int a, int b){
-    if(count>3&&first_x==a&&first_y==b){
+    if(first_dir==dir&&first_x==a&&first_y==b){
         cout<<"-1";
         return;
     }
