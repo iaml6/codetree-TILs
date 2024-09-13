@@ -7,6 +7,7 @@ int n,m,r,c;
 char word[MAX_M];
 int square[MAX_N+1][MAX_N+1]={};
 int up=1,front=2,rightt=3;
+int count=0;
 
 bool In_Range(int x,int y,char h){
      if(h=='L'){
@@ -27,7 +28,7 @@ bool In_Range(int x,int y,char h){
 void Move(int x,int y, char h){
     if(h=='L'){
         if(In_Range(x,y,h)){
-
+            count++;
         
         square[x][y-1]=(7-rightt);
         int original_up=up,original_front=front,original_right=rightt;
@@ -38,7 +39,7 @@ void Move(int x,int y, char h){
     }
     else if(h=='R'){
         if(In_Range(x,y,h)){
-
+            count++;
         
         square[x][y+1]=rightt;
         int original_up=up,original_front=front,original_right=rightt;
@@ -48,7 +49,7 @@ void Move(int x,int y, char h){
     }
     else if(h=='D'){
         if(In_Range(x,y,h)){
-
+            count++;
         
         square[x+1][y]=front;
         int original_up=up,original_front=front,original_right=rightt;
@@ -58,7 +59,7 @@ void Move(int x,int y, char h){
     }
     else{
         if(In_Range){
-            
+        count++;       
         square[x-1][y]=(7-front);
         int original_up=up,original_front=front,original_right=rightt;
         front=(7-original_up);
@@ -75,6 +76,10 @@ int main() {
     }
     int x=r,y=c;
     square[x][y]=6;
+    if(n==1){
+        cout<<"6";
+        return 0;
+    }
     for(int i=0;i<m;i++){
         Move(x,y,word[i]);
         if(word[i]=='L'){
@@ -94,13 +99,12 @@ int main() {
     for(int i=1;i<=n;i++){
         for(int j=1;j<=n;j++){
             sum+=square[i][j];
-            // cout<<square[i][j]<<" ";
+            cout<<square[i][j]<<" ";
         }
-        // cout<<endl;
+        cout<<endl;
     }
-    if(sum==0){
-        cout<<"6";
-    }
+    
+    cout<<"count "<< count<<endl;
     cout<<sum;
     return 0;
 }
