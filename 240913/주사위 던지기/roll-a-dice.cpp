@@ -104,7 +104,7 @@ int main() {
         //cout<<endl;
     }
     
-    cout<<"count "<< count<<endl;
+   
     cout<<sum;
     return 0;
 }
