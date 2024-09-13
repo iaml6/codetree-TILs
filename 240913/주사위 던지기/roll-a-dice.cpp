@@ -80,23 +80,23 @@ int main() {
     for(int i=0;i<m;i++){
         Move(x,y,word[i]);
         if(word[i]=='L'){
-            if(In_Range(x,y,word[i])){
+            if(y-1>=1){
                 y-=1;
             }
             
         }
         else if(word[i]=='R'){
-            if(In_Range(x,y,word[i])){
+            if(y+1<=n){
                 y+=1;
             }
         }
         else if(word[i]=='U'){
-            if(In_Range(x,y,word[i])){
+            if(x-1>0){
                 x-=1;
             }
         }
         else{
-            if(In_Range(x,y,word[i])){
+            if(x+1<=n){
                 x+=1;
             }
         }
