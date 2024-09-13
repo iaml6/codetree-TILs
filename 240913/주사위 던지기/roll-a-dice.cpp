@@ -7,7 +7,6 @@ int n,m,r,c;
 char word[MAX_M];
 int square[MAX_N+1][MAX_N+1]={};
 int up=1,front=2,rightt=3;
-int count=0;
 
 bool In_Range(int x,int y,char h){
      if(h=='L'){
@@ -28,7 +27,6 @@ bool In_Range(int x,int y,char h){
 void Move(int x,int y, char h){
     if(h=='L'){
         if(In_Range(x,y,h)){
-            count++;
         
         square[x][y-1]=(7-rightt);
         int original_up=up,original_front=front,original_right=rightt;
@@ -39,7 +37,6 @@ void Move(int x,int y, char h){
     }
     else if(h=='R'){
         if(In_Range(x,y,h)){
-            count++;
         
         square[x][y+1]=rightt;
         int original_up=up,original_front=front,original_right=rightt;
@@ -49,7 +46,7 @@ void Move(int x,int y, char h){
     }
     else if(h=='D'){
         if(In_Range(x,y,h)){
-            count++;
+            
         
         square[x+1][y]=front;
         int original_up=up,original_front=front,original_right=rightt;
@@ -83,16 +80,25 @@ int main() {
     for(int i=0;i<m;i++){
         Move(x,y,word[i]);
         if(word[i]=='L'){
-            y-=1;
+            if(In_Range(x,y,word[i])){
+                y-=1;
+            }
+            
         }
         else if(word[i]=='R'){
-            y+=1;
+            if(In_Range(x,y,word[i])){
+                y+=1;
+            }
         }
         else if(word[i]=='U'){
-            x-=1;
+            if(In_Range(x,y,word[i])){
+                x-=1;
+            }
         }
         else{
-            x+=1;
+            if(In_Range(x,y,word[i])){
+                x+=1;
+            }
         }
     }
     int sum=0;
