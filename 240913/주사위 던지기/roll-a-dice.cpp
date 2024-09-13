@@ -99,9 +99,9 @@ int main() {
     for(int i=1;i<=n;i++){
         for(int j=1;j<=n;j++){
             sum+=square[i][j];
-            cout<<square[i][j]<<" ";
+            //cout<<square[i][j]<<" ";
         }
-        cout<<endl;
+        //cout<<endl;
     }
     
     cout<<"count "<< count<<endl;
