@@ -10,7 +10,7 @@ int space[101][101]={};
 
 int main() {
     cin >> N >> M >> K;
-    
+    int tail_x=1,tail_y=1;
     space[1][1]=10; // 머리를 나타냄
     for (int i = 0; i < M; i++) {
         cin>>x[i]>>y[i];
@@ -18,7 +18,7 @@ int main() {
     }
     int currentx=1,currenty=1;
     int time=0;
-    int numx[10001]={},numy[10001]={};
+    int numx[10001]={0},numy[10001]={0};
     int length=1;
     numx[0]=1,numy[0]=1;
     int count_num=0;
@@ -37,10 +37,10 @@ int main() {
                 }
                 if(space[j][currenty]==1){
                     int last_x,last_y;
-                    for(int i=0;i<=count_num;i++){
-                            if(numx[i]!=0){
-                                last_x=numx[i];
-                                last_y=numy[i];
+                    for(int k=0;k<=count_num;k++){
+                            if(numx[k]!=0){
+                                last_x=numx[k];
+                                last_y=numy[k];
                                 break;
                             }
                         }
@@ -54,18 +54,27 @@ int main() {
                         space[j][currenty]=10;
                         space[j+1][currenty]=1;
                         
-                        for(int i=0;i<=count_num;i++){
-                            if(numx[i]!=0){
-                                space[numx[i]][numy[i]]=0;
-                                numx[i]=0;
-                                numy[i]=0;
+                        for(int k=0;k<=count_num;k++){
+                            if(numx[k]!=0){
+                                
+                                space[numx[k]][numy[k]]=0;
+                                numx[k]=0;
                                 
                                 break;
                             }
                         }
-                        length--;
+                        
                     }
                     else{
+                        for(int k=0;k<=count_num;k++){
+                            if(numx[k]!=0){
+                                
+                                space[numx[k]][numy[k]]=0;
+                                numx[k]=0;
+                                
+                                break;
+                            }
+                        }
                         currentx--;
                         space[j][currenty]=10;
                         space[j+1][currenty]=0;
@@ -86,8 +95,9 @@ int main() {
                     numx[count_num]=j;
                     numy[count_num]=currenty;
                     currentx--;
+                    continue;
                 }
-                else {
+                else if(space[j][currenty]==0){
                     time++;
                     count_num++;
                     numx[count_num]=j;
@@ -97,17 +107,28 @@ int main() {
                         space[j][currenty]=10;
                         space[j+1][currenty]=1;
                         
-                        for(int i=0;i<=count_num;i++){
-                            if(numx[i]!=0){
-                                space[numx[i]][numy[i]]=0;
-                                numx[i]=0;
-                                numy[i]=0;
-                                length--;
+                        for(int k=0;k<=count_num;k++){
+                            if(numx[k]!=0){
+                                
+                                space[numx[k]][numy[k]]=0;
+                                numx[k]=0;
+                                
+                                
                                 break;
                             }
                         }
                     }
                     else{
+                        for(int k=0;k<=count_num;k++){
+                            if(numx[k]!=0){
+                                
+                                space[numx[k]][numy[k]]=0;
+                                numx[k]=0;
+                                
+                                
+                                break;
+                            }
+                        }
                         currentx--;
                         space[j][currenty]=10;
                         space[j+1][currenty]=0;
@@ -118,6 +139,7 @@ int main() {
 
                     
                 }
+                
             }
             
             
@@ -135,6 +157,7 @@ int main() {
                     int last_x,last_y;
                     for(int i=0;i<=count_num;i++){
                             if(numx[i]!=0){
+                                
                                 last_x=numx[i];
                                 last_y=numy[i];
                                 break;
@@ -149,19 +172,30 @@ int main() {
                             currentx++;
                             space[j][currenty]=10;
                             space[j-1][currenty]=1;
-                        
-                            for(int i=0;i<=count_num;i++){
-                                if(numx[i]!=0){
-                                    space[numx[i]][numy[i]]=0;
-                                    numx[i]=0;
-                                    numy[i]=0;
-                                    
-                                    break;
-                                }
+                            
+                            for(int k=0;k<=count_num;k++){
+                            if(numx[k]!=0){
+                                
+                                space[numx[k]][numy[k]]=0;
+                                numx[k]=0;
+                                
+                                
+                                break;
+                            }
                             }
                             length--;
-                    }
+                        }
                     else{
+                        for(int k=0;k<=count_num;k++){
+                            if(numx[k]!=0){
+                                
+                                space[numx[k]][numy[k]]=0;
+                                numx[k]=0;
+                                
+                                
+                                break;
+                            }
+                        }
                         space[j][currenty]=10;
                         space[j-1][currenty]=0;
                         currentx++;
@@ -182,29 +216,42 @@ int main() {
                     numx[count_num]=j;
                     numy[count_num]=currenty;
                     currentx++;
+                    continue;
                 }
-                else {
+                else if(space[j][currenty]==0) {
                     time++;
                     count_num++;
                     numx[count_num]=j;
                     numy[count_num]=currenty;
                     if(length>1){
+                        
                         currentx++;
                         space[j][currenty]=10;
                         space[j-1][currenty]=1;
                         
-                        for(int i=0;i<=count_num;i++){
-                            if(numx[i]!=0){
-                                space[numx[i]][numy[i]]=0;
-                                numx[i]=0;
-                                numy[i]=0;
+                        for(int k=0;k<=count_num;k++){
+                            if(numx[k]!=0){
+                                
+                                space[numx[k]][numy[k]]=0;
+                                numx[k]=0;
+                                
                                 
                                 break;
                             }
                         }
-                        length--;
+                        
                     }
                     else{
+                        for(int k=0;k<=count_num;k++){
+                            if(numx[k]!=0){
+                                
+                                space[numx[k]][numy[k]]=0;
+                                numx[k]=0;
+                                
+                                
+                                break;
+                            }
+                        }
                         space[j][currenty]=10;
                         space[j-1][currenty]=0;
                         currentx++;
@@ -215,6 +262,7 @@ int main() {
 
                     
                 }
+                
             }
         }
         else if(d[i]=='L'){
@@ -230,6 +278,7 @@ int main() {
                     int last_x,last_y;
                     for(int i=0;i<=count_num;i++){
                             if(numx[i]!=0){
+                                
                                 last_x=numx[i];
                                 last_y=numy[i];
                                 break;
@@ -242,20 +291,32 @@ int main() {
                         numx[count_num]=currentx;
                         numy[count_num]=j;
                         if(length>1){
+                            
                             space[currentx][j]=10;
                             space[currentx][j+1]=1;
-                            for(int i=0;i<=count_num;i++){
-                                if(numx[i]!=0){
-                                    space[numx[i]][numy[i]]=0;
-                                    numx[i]=0;
-                                    numy[i]=0;
+                            for(int k=0;k<=count_num;k++){
+                                if(numx[k]!=0){
+                                    
+                                    space[numx[k]][numy[k]]=0;
+                                    numx[k]=0;
+                                    numy[k]=0;
                                     
                                     break;
                                 }
                             }
-                            length--;
+                            
                         }
                         else{
+                            for(int k=0;k<=count_num;k++){
+                                if(numx[k]!=0){
+                                    
+                                    space[numx[k]][numy[k]]=0;
+                                    numx[k]=0;
+                                    numy[k]=0;
+                                    
+                                    break;
+                                }
+                            }
                             space[currentx][j]=10;
                             space[currentx][j+1]=0;
                         }
@@ -275,27 +336,40 @@ int main() {
                     numx[count_num]=currentx;
                     numy[count_num]=j;
                     currenty--;
+                    continue;
                 }
-                else {
+                else if(space[currentx][j]==0) {
                     time++;
                     currenty--;
                     count_num++;
                     numx[count_num]=currentx;
                     numy[count_num]=j;
                     if(length>1){
+                        
                         space[currentx][j]=10;
                         space[currentx][j+1]=1;
-                        for(int i=0;i<=count_num;i++){
-                            if(numx[i]!=0){
-                                space[numx[i]][numy[i]]=0;
-                                numx[i]=0;
-                                numy[i]=0;
-                                length--;
-                                break;
+                        for(int k=0;k<=count_num;k++){
+                                if(numx[k]!=0){
+                                    
+                                    space[numx[k]][numy[k]]=0;
+                                    numx[k]=0;
+                                    numy[k]=0;
+                                    
+                                    break;
+                                }
                             }
-                        }
                     }
                     else{
+                        for(int k=0;k<=count_num;k++){
+                                if(numx[k]!=0){
+                                    
+                                    space[numx[k]][numy[k]]=0;
+                                    numx[k]=0;
+                                    numy[k]=0;
+                                    
+                                    break;
+                                }
+                            }
                         space[currentx][j]=10;
                         space[currentx][j+1]=0;
                     }
@@ -305,6 +379,7 @@ int main() {
 
                     
                 }
+                
             }
         }
         else if(d[i]=='R'){
@@ -320,6 +395,7 @@ int main() {
                     int last_x,last_y;
                     for(int i=0;i<=count_num;i++){
                             if(numx[i]!=0){
+                                
                                 last_x=numx[i];
                                 last_y=numy[i];
                                 break;
@@ -332,20 +408,32 @@ int main() {
                     numx[count_num]=currentx;
                     numy[count_num]=j;
                     if(length>1){
+                        
                         space[currentx][j]=10;
                         space[currentx][j-1]=1;
-                        for(int i=0;i<=count_num;i++){
-                            if(numx[i]!=0){
-                                space[numx[i]][numy[i]]=0;
-                                numx[i]=0;
-                                numy[i]=0;
-                                
-                                break;
+                        for(int k=0;k<=count_num;k++){
+                                if(numx[k]!=0){
+                                    
+                                    space[numx[k]][numy[k]]=0;
+                                    numx[k]=0;
+                                    numy[k]=0;
+                                    
+                                    break;
+                                }
                             }
-                        }
-                        length--;
+                        
                     }
                     else{
+                        for(int k=0;k<=count_num;k++){
+                                if(numx[k]!=0){
+                                    
+                                    space[numx[k]][numy[k]]=0;
+                                    numx[k]=0;
+                                    numy[k]=0;
+                                    
+                                    break;
+                                }
+                            }
                         space[currentx][j]=10;
                         space[currentx][j-1]=0;
                     }
@@ -365,27 +453,40 @@ int main() {
                     numx[count_num]=currentx;
                     numy[count_num]=j;
                     currenty++;
+                    continue;
                 }
-                else {
+                else if(space[currentx][j]==0) {
                     time++;
                     currenty++;
                     count_num++;
                     numx[count_num]=currentx;
                     numy[count_num]=j;
                     if(length>1){
+                        
                         space[currentx][j]=10;
                         space[currentx][j-1]=1;
-                        for(int i=0;i<=count_num;i++){
-                            if(numx[i]!=0){
-                                space[numx[i]][numy[i]]=0;
-                                numx[i]=0;
-                                numy[i]=0;
-                                length--;
-                                break;
+                        for(int k=0;k<=count_num;k++){
+                                if(numx[k]!=0){
+                                    
+                                    space[numx[k]][numy[k]]=0;
+                                    numx[k]=0;
+                                    numy[k]=0;
+                                    
+                                    break;
+                                }
                             }
-                        }
                     }
                     else{
+                        for(int k=0;k<=count_num;k++){
+                                if(numx[k]!=0){
+                                    
+                                    space[numx[k]][numy[k]]=0;
+                                    numx[k]=0;
+                                    numy[k]=0;
+                                    
+                                    break;
+                                }
+                            }
                         space[currentx][j]=10;
                         space[currentx][j-1]=0;
                     }
@@ -395,18 +496,20 @@ int main() {
 
                     
                 }
+                
             }
         }
-        // for(int l=1;l<=N;l++){
-        //     for(int k=1;k<=N;k++){
-        //         cout<<space[l][k]<<" ";
+        // cout << "After command " << d[i] << " " << p[i] << ":" << endl;
+        // cout << "Time: " << time << ", Current Position: (" << currentx << ", " << currenty << "), Length: " << length << endl;
+        // cout << "Space state:" << endl;
+        // for (int l = 1; l <= N; l++) {
+        //     for (int k = 1; k <= N; k++) {
+        //         cout << space[l][k] << " ";
         //     }
-        //     cout<<endl;
+        //     cout << endl;
         // }
        
     }
     cout<<time;
-    // Write your code here!
-
     return 0;
 }
