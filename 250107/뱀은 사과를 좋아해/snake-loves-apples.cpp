@@ -35,10 +35,46 @@ int main() {
                     cout<<time;
                     return 0;
                 }
-                else if(space[j][currenty]==1){
-                    time++;     
-                    cout<<time;
-                    return 0;
+                if(space[j][currenty]==1){
+                    int last_x,last_y;
+                    for(int i=0;i<=count_num;i++){
+                            if(numx[i]!=0){
+                                last_x=numx[i];
+                                last_y=numy[i];
+                                break;
+                            }
+                        }
+                    if(last_x==j&&last_y==currenty){
+                        time++;
+                    count_num++;
+                    numx[count_num]=j;
+                    numy[count_num]=currenty;
+                    if(length>1){
+                        currentx--;
+                        space[j][currenty]=10;
+                        space[j+1][currenty]=1;
+                        
+                        for(int i=0;i<=count_num;i++){
+                            if(numx[i]!=0){
+                                space[numx[i]][numy[i]]=0;
+                                numx[i]=0;
+                                numy[i]=0;
+                                length--;
+                                break;
+                            }
+                        }
+                    }
+                    else{
+                        currentx--;
+                        space[j][currenty]=10;
+                        space[j+1][currenty]=0;
+                    }
+                    }
+                    else{
+                        time++;     
+                        cout<<time;
+                        return 0;
+                    }
                 }
                 else if(space[j][currenty]==2){
                     time++;
@@ -95,9 +131,45 @@ int main() {
                     return 0;
                 }
                 else if(space[j][currenty]==1){
-                    time++;     
-                    cout<<time;
-                    return 0;
+                    int last_x,last_y;
+                    for(int i=0;i<=count_num;i++){
+                            if(numx[i]!=0){
+                                last_x=numx[i];
+                                last_y=numy[i];
+                                break;
+                            }
+                        }
+                    if(last_x==j&&last_y==currenty){
+                        time++;
+                        count_num++;
+                        numx[count_num]=j;
+                        numy[count_num]=currenty;
+                        if(length>1){
+                            currentx++;
+                            space[j][currenty]=10;
+                            space[j-1][currenty]=1;
+                        
+                            for(int i=0;i<=count_num;i++){
+                                if(numx[i]!=0){
+                                    space[numx[i]][numy[i]]=0;
+                                    numx[i]=0;
+                                    numy[i]=0;
+                                    length--;
+                                    break;
+                                }
+                        }
+                    }
+                    else{
+                        space[j][currenty]=10;
+                        space[j-1][currenty]=0;
+                        currentx++;
+                    }
+                    }
+                    else{
+                        time++;     
+                        cout<<time;
+                        return 0;
+                    }
                 }
                 else if(space[j][currenty]==2){
                     space[j][currenty]=10;
@@ -152,9 +224,43 @@ int main() {
                     return 0;
                 }
                 else if(space[currentx][j]==1){
-                    time++;     
-                    cout<<time;
-                    return 0;
+                    int last_x,last_y;
+                    for(int i=0;i<=count_num;i++){
+                            if(numx[i]!=0){
+                                last_x=numx[i];
+                                last_y=numy[i];
+                                break;
+                            }
+                        }
+                    if(last_x==currentx&&last_y==j){
+                        time++;
+                        currenty--;
+                        count_num++;
+                        numx[count_num]=currentx;
+                        numy[count_num]=j;
+                        if(length>1){
+                            space[currentx][j]=10;
+                            space[currentx][j+1]=1;
+                            for(int i=0;i<=count_num;i++){
+                                if(numx[i]!=0){
+                                    space[numx[i]][numy[i]]=0;
+                                    numx[i]=0;
+                                    numy[i]=0;
+                                    length--;
+                                    break;
+                                }
+                            }
+                        }
+                        else{
+                            space[currentx][j]=10;
+                            space[currentx][j+1]=0;
+                        }
+                    }
+                    else{
+                        time++;     
+                        cout<<time;
+                        return 0;
+                    }
                 }
                 else if(space[currentx][j]==2){
                     time++;
@@ -207,9 +313,43 @@ int main() {
                     return 0;
                 }
                 else if(space[currentx][j]==1){
-                    time++;     
-                    cout<<time;
-                    return 0;
+                    int last_x,last_y;
+                    for(int i=0;i<=count_num;i++){
+                            if(numx[i]!=0){
+                                last_x=numx[i];
+                                last_y=numy[i];
+                                break;
+                            }
+                        }
+                    if(last_x==currentx&&last_y==j){
+                        time++;
+                    currenty++;
+                    count_num++;
+                    numx[count_num]=currentx;
+                    numy[count_num]=j;
+                    if(length>1){
+                        space[currentx][j]=10;
+                        space[currentx][j-1]=1;
+                        for(int i=0;i<=count_num;i++){
+                            if(numx[i]!=0){
+                                space[numx[i]][numy[i]]=0;
+                                numx[i]=0;
+                                numy[i]=0;
+                                length--;
+                                break;
+                            }
+                        }
+                    }
+                    else{
+                        space[currentx][j]=10;
+                        space[currentx][j-1]=0;
+                    }
+                    }
+                    else{
+                        time++;     
+                        cout<<time;
+                        return 0;
+                    }
                 }
                 else if(space[currentx][j]==2){
                     time++;
