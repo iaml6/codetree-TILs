@@ -59,10 +59,11 @@ int main() {
                                 space[numx[i]][numy[i]]=0;
                                 numx[i]=0;
                                 numy[i]=0;
-                                length--;
+                                
                                 break;
                             }
                         }
+                        length--;
                     }
                     else{
                         currentx--;
@@ -154,10 +155,11 @@ int main() {
                                     space[numx[i]][numy[i]]=0;
                                     numx[i]=0;
                                     numy[i]=0;
-                                    length--;
+                                    
                                     break;
                                 }
-                        }
+                            }
+                            length--;
                     }
                     else{
                         space[j][currenty]=10;
@@ -196,10 +198,11 @@ int main() {
                                 space[numx[i]][numy[i]]=0;
                                 numx[i]=0;
                                 numy[i]=0;
-                                length--;
+                                
                                 break;
                             }
                         }
+                        length--;
                     }
                     else{
                         space[j][currenty]=10;
@@ -246,10 +249,11 @@ int main() {
                                     space[numx[i]][numy[i]]=0;
                                     numx[i]=0;
                                     numy[i]=0;
-                                    length--;
+                                    
                                     break;
                                 }
                             }
+                            length--;
                         }
                         else{
                             space[currentx][j]=10;
@@ -335,10 +339,11 @@ int main() {
                                 space[numx[i]][numy[i]]=0;
                                 numx[i]=0;
                                 numy[i]=0;
-                                length--;
+                                
                                 break;
                             }
                         }
+                        length--;
                     }
                     else{
                         space[currentx][j]=10;
@@ -398,6 +403,7 @@ int main() {
         //     }
         //     cout<<endl;
         // }
+       
     }
     cout<<time;
     // Write your code here!
