@@ -43,7 +43,7 @@ int main() {
                         y=n;
                     }
                     int change=0;
-                    int x_pos,y_pos;
+                    int x_pos=0,y_pos=0;
                     int ch=0;
                     for(int l=0;l<8;l++){
                         if(In_Range(x,y,l)){
@@ -69,17 +69,28 @@ int main() {
                                 break;
                             }
                         }
+                        int biggest=0;
                         for(int l=k;l<=n*n;l++){
                             if(gab[j][l]!=0){
+                                if(biggest<gab[j][l]){
+                                    biggest=gab[j][l];
+                                }
                                 gab[delete_num][start]=gab[j][l];
                                 start++;
                                 gab[j][l]=0;
                             }
                         }
-                        if(big[x][y]>big[x_pos][y_pos]){
-                            big[x_pos][y_pos]=big[x][y];
+
+                        if(biggest>big[x_pos][y_pos]){
+                            big[x_pos][y_pos]=biggest;
                         }
-                        big[x][y]=0;
+                        int cha=0;
+                        for(int l=1;l<k;l++){
+                            if(gab[j][l]>cha){
+                                cha=gab[j][l];
+                            }
+                        }
+                        big[x][y]=cha;
                         
                     }
 
