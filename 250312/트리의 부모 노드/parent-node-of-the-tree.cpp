@@ -14,7 +14,10 @@ int main() {
 
     
         for(int i=2;i<=n;i++){
-        cout<<parent[i]<<endl;
+            if(prarent[i]!=0){
+                cout<<parent[i]<<endl;
+            }
+        
     }
     
     
